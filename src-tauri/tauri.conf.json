@@ -1,49 +1,51 @@
 {
-	"build": {
-		"beforeDevCommand": "bun run dev",
-		"beforeBuildCommand": "bun run build",
-		"devPath": "http://localhost:1420",
-		"distDir": "../dist"
-	},
-	"package": {
-		"productName": "tauri_solid_todo_app",
-		"version": "0.0.0"
-	},
-	"tauri": {
-		"allowlist": {
-			"all": false,
-			"window": {
-				"startDragging": true,
-				"setClosable": true,
-				"close": true
-			},
-			"shell": {
-				"all": false,
-				"open": true
-			}
-		},
-		"windows": [
-			{
-				"title": "tauri_solid_todo_app",
-				"decorations": false,
-				"width": 800,
-				"height": 600
-			}
-		],
-		"security": {
-			"csp": null
-		},
-		"bundle": {
-			"active": true,
-			"targets": "all",
-			"identifier": "com.tauri.dev",
-			"icon": [
-				"icons/32x32.png",
-				"icons/128x128.png",
-				"icons/128x128@2x.png",
-				"icons/icon.icns",
-				"icons/icon.ico"
-			]
-		}
-	}
+  "build": {
+    "beforeDevCommand": "bun run dev",
+    "beforeBuildCommand": "bun run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "tauri_solid_todo_app",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "window": {
+        "startDragging": true,
+        "setClosable": true,
+        "close": true,
+        "minimize": true,
+        "maximize": true
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      }
+    },
+    "windows": [
+      {
+        "title": "tauri_solid_todo_app",
+        "decorations": false,
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.tauri.dev",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    }
+  }
 }
