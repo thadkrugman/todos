@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#title-bar {
+	user-select: none;
+}
+
+#drag-region {
+	-webkit-app-region: drag;
+}
+
+#window-controls button {
+	-webkit-app-region: no-drag;
+	cursor: pointer;
+	user-select: all;
+}
