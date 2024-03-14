@@ -5,9 +5,6 @@ mod database;
 
 use tauri::{State, Config};
 
-// Assuming the Todo struct and related functions are defined in the database module
-// and updated to accept a `&Config` parameter as previously discussed.
-
 struct AppConfig {
     config: Config,
 }
@@ -53,11 +50,11 @@ fn get_completed_todos(state: State<AppConfig>) -> Result<Vec<database::Todo>, S
 }
 
 fn main() {
-    let context = tauri::generate_context!(); // Call once and store in a variable
+    let context = tauri::generate_context!(); 
 
     tauri::Builder::default()
         .manage(AppConfig {
-            config: context.config().clone(), // Use the stored context
+            config: context.config().clone(), 
         })
         .invoke_handler(tauri::generate_handler![
             add_todo,
@@ -66,7 +63,7 @@ fn main() {
             get_all_todos,
             get_completed_todos
         ])
-        .run(context) // Use the stored context
+        .run(context) 
         .expect("error while running tauri application");
 }
 

@@ -1,8 +1,8 @@
 use rusqlite::{Connection, Result};
 use serde::Serialize;
 use std::path::PathBuf;
-use tauri::api::path::app_data_dir; // Make sure to use app_data_dir
-use tauri::Config; // Import the Config struct
+use tauri::api::path::app_data_dir; 
+use tauri::Config; 
 
 #[derive(Serialize)]
 pub struct Todo {
@@ -12,22 +12,12 @@ pub struct Todo {
 }
 
 pub fn establish_connection(config: &Config) -> Result<Connection> {
-    // Use the app_data_dir function with the provided Config reference
     let app_data_path: PathBuf = app_data_dir(config).expect("Failed to find the app data directory");
-
-    // Use a "data" directory within the app data directory for storing the database
     let data_path = app_data_path.join("data");
-
-    // Now specify the database file within this "data" directory
     let db_file_path = data_path.join("todos.db");
-
-    // This line attempts to create the "data" directory if it does not exist
     std::fs::create_dir_all(&data_path).expect("Failed to create the data directory");
-
-    // Open a connection to the database at the specified path
     let conn = Connection::open(db_file_path)?;
 
-    // Initialize the database schema if it hasn't been already
     conn.execute(
         "CREATE TABLE IF NOT EXISTS todos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

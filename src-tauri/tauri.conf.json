@@ -26,7 +26,7 @@
     },
     "windows": [
       {
-        "title": "tauri_solid_todo_app",
+        "title": "Todos",
         "decorations": false,
         "width": 800,
         "height": 600
