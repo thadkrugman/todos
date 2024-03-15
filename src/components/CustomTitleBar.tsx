@@ -18,20 +18,22 @@ const CustomTitleBar: Component = () => {
     <div
       data-tauri-drag-region='true'
       id='title-bar'
-      class='flex flex-row space-x-2 px-6 lg:px-8 py-5 cursor-default items-start'
+      class='flex flex-row px-6 lg:px-8 py-5 cursor-default items-start'
     >
-      <button
-        onClick={() => handleClose()}
-        class='rounded-full flex h-3 w-3 items-center justify-center bg-gruv-gray-dark hover:bg-close-red group cursor-default ease-in-out transition-colors duration-150'
-      />
-      <button
-        onClick={() => handleMinimize()}
-        class='rounded-full flex h-3 w-3 items-center justify-center bg-gruv-gray-dark hover:bg-gruv-yellow group cursor-default ease-in-out transition-colors duration-150'
-      />
-      <button
-        onClick={() => handleMaximize()}
-        class='rounded-full flex h-3 w-3 items-center justify-center bg-gruv-gray-dark hover:bg-gruv-aqua group cursor-default ease-in-out transition-colors duration-150'
-      />
+      <div class='group flex flex-row space-x-2'>
+        <button
+          onClick={() => handleClose()}
+          class='rounded-full flex h-3 w-3 items-center justify-center bg-gruv-gray-dark group-hover:bg-close-red group cursor-default'
+        />
+        <button
+          onClick={() => handleMinimize()}
+          class='rounded-full flex h-3 w-3 items-center justify-center bg-gruv-gray-dark group-hover:bg-gruv-yellow group cursor-default'
+        />
+        <button
+          onClick={() => handleMaximize()}
+          class='rounded-full flex h-3 w-3 items-center justify-center bg-gruv-gray-dark group-hover:bg-gruv-aqua group cursor-default'
+        />
+      </div>
     </div>
   )
 }
